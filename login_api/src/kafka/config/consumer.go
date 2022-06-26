@@ -19,8 +19,8 @@ func NewConsumer(msgChan chan *ckafka.Message) *KafkaConsumer {
 
 func (kafka *KafkaConsumer) Consumer() {
 	config := &ckafka.ConfigMap{
-		"bootstrap.servers": os.Getenv("test"),
-		"group.id":          os.Getenv("test"),
+		"bootstrap.servers": os.Getenv("bootstrap.servers"),
+		"group.id":          os.Getenv("group.id"),
 	}
 
 	consumer, err := ckafka.NewConsumer(config)
@@ -28,7 +28,7 @@ func (kafka *KafkaConsumer) Consumer() {
 		log.Fatalf("ERROR CONSUMING KAFKA MESSAGE")
 	}
 
-	topics := []string{os.Getenv("test")}
+	topics := []string{os.Getenv("topics")}
 	consumer.SubscribeTopics(topics, nil)
 
 	for {

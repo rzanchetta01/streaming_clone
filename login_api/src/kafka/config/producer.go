@@ -21,10 +21,10 @@ func newProducer() *ckafka.Producer {
 }
 
 //retorna error sempre que não consegue enviar msg
-func Produce(loginData string, topic string, producer *ckafka.Producer) error {
+func Produce(isReal byte, topic string, producer *ckafka.Producer) error {
 	message := &ckafka.Message{
 		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: ckafka.PartitionAny},
-		Value:          []byte(loginData),
+		Value:          []byte{isReal},
 	}
 
 	err := producer.Produce(message, nil)
