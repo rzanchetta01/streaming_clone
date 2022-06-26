@@ -1,0 +1,38 @@
+use case --->  a platform tha needs to performn streaming of movies, by default has 2 types of accounts, the user and the admin account.
+these videos needs to be displayed in a streaming format for the user
+and needs to be uploaded by the admin account for being accessible for the user consume
+
+
+the login only will use for now the name, password and account type
+the application will be the same but the content displayed will be different based on the account type.
+
+PASS 1
+lading page
+    its gonna be the first page that posible user of website will access, in that page will have a overview of the project, one video for test the platform and sign up/in for user login
+PASS 2
+login microsservice
+    microsservice responsable for dispach, store and encryptograph the user data, it will be our main authentication mechanism
+PASS 3
+video streaming
+    microsservice responsable for sending video streaming to the user, base on the request, and for upload video base on the admin request
+
+
+
+caso de uso ---> uma plataforma que precisa realizar streaming de filmes, por padrão tem 2 tipos de contas, a de usuário e a de admin.
+esses vídeos precisam ser exibidos em um formato de streaming para o usuário
+e precisa ser carregado pela conta de administrador para ser acessível para o usuário consumir
+
+o login apenas usará por enquanto o nome, senha e tipo de conta
+o aplicativo será o mesmo, mas o conteúdo exibido será diferente com base no tipo de conta.
+
+PASS 1
+página de embarque
+    será a primeira página que o possível usuário do site acessará, nessa página terá uma visão geral do projeto, um vídeo para testar a plataforma e cadastre-se para login do usuário
+    
+PASS 2
+microsserviço de login
+    microsservice responsável por despachar, armazenar e criptografar os dados do usuário, será nosso principal mecanismo de autenticação
+    
+PASS 3
+transmissão de vídeo
+    microsserviço responsável pelo envio de streaming de vídeo para o usuário, com base na solicitação, e pelo upload da base de vídeo na solicitação do administrador
