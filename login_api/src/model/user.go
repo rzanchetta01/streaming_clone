@@ -1,8 +1,13 @@
 package model
 
 type User struct {
-	email    string //`json:""`
-	username string //`json:""`
-	password string //`json:""`
-	isAdmin  bool   //`json:""`
+	email     string
+	username  string
+	password  string
+	isAdmin   bool
+	isNewUser bool
+}
+
+func NewUser() *User {
+	return &User{}
 }

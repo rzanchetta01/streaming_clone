@@ -1,34 +1,64 @@
 package main
 
+/*
 import (
-	"fmt"
-	"login-api/src/controller/criptografia"
-	kafka_config "login-api/src/kafka/config"
-
-	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	//ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	model "login-api/src/model"
 )
 
 func init() {}
 
 func main() {
+	/*
+		msgChan := make(chan *ckafka.Message)
+		consumer := kafka_config.NewConsumer(msgChan)
+		go consumer.Consumer()
 
-	msgChan := make(chan *ckafka.Message)
-	consumer := kafka_config.NewConsumer(msgChan)
-	go consumer.Consumer()
+		for msg := range msgChan {
+			go kafka_config.SendProduce(msg)
+			println(string(msg.Value))
+		}
 
-	/*for msg := range msgChan {
-		go kafka_service.Produce(msg)
-		println(string(msg.Value))
-	}*/
+	user := model.User{
+		email:     "teste",
+		username:  "test",
+		password:  "test",
+		isAdmin:   true,
+		isNewUser: false,
+	}
+	result := model.NewResult()
 
-	var c = criptografia.CriptografiaMD5{
-		Texto: "Teste",
+	model.User.
+		c.ValidateUser(user, result)
+
+}*/
+
+import "fmt"
+
+type Address struct {
+	city    string
+	country string
+}
+
+type User struct {
+	name    string
+	age     int
+	address Address
+}
+
+func main() {
+
+	p := User{
+		name: "John Doe",
+		age:  34,
+		address: Address{
+			city:    "New York",
+			country: "USA",
+		},
 	}
 
-	fmt.Println(c.Criptografa())
-
-	for {
-
-	}
-
+	fmt.Println("Name:", p.name)
+	fmt.Println("Age:", p.age)
+	fmt.Println("City:", p.address.city)
+	fmt.Println("Country:", p.address.country)
 }
