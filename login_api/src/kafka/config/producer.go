@@ -14,7 +14,7 @@ import (
 
 func newProducer() *ckafka.Producer {
 	config := &ckafka.ConfigMap{
-		"bootstrap.server": os.Getenv(""),
+		"bootstrap.servers": os.Getenv("bootstrap.servers"),
 	}
 
 	producer, err := ckafka.NewProducer(config)

@@ -1,8 +1,8 @@
 package model
 
 type Result struct {
-	user    User //`json:`
-	isValid bool //`json:`
+	User    *User
+	IsValid bool
 }
 
 func NewResult() *Result {

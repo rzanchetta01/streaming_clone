@@ -19,8 +19,8 @@ func NewConsumer(msgChan chan *ckafka.Message) *KafkaConsumer {
 
 func (kafka *KafkaConsumer) Consumer() {
 	config := &ckafka.ConfigMap{
-		"bootstrap.servers": os.Getenv("bootstrap.servers"),
-		"group.id":          os.Getenv("group.id"),
+		"bootstrap.server": os.Getenv("bootstrap.servers"),
+		"group.id":         os.Getenv("group.id"),
 	}
 
 	consumer, err := ckafka.NewConsumer(config)

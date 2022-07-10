@@ -3,7 +3,6 @@ package criptografia
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
 	"login-api/src/model"
 )
 
@@ -31,20 +30,17 @@ func ValidateUser(u *model.User, r *model.Result) *model.Result {
 
 	user := u
 	result := r
-	/*
-		if user.isNewUser == true {
-			result.isValid = false
-			result.user = user
 
-			return result
-		}
+	if user.IsAdmin == true {
 
-		result.user = user
-		result.isValid = true*/
+		result.IsValid = false
+		result.User = user
 
-	fmt.Println("{}", user)
+		return result
+	}
 
-	fmt.Println("{}", result)
+	result.User = user
+	result.IsValid = true
 
 	return result
 

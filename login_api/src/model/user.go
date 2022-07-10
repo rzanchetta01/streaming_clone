@@ -1,11 +1,11 @@
 package model
 
 type User struct {
-	email     string
-	username  string
-	password  string
-	isAdmin   bool
-	isNewUser bool
+	Email     string
+	Username  string
+	Password  string
+	IsAdmin   bool
+	IsNewUser bool
 }
 
 func NewUser() *User {
